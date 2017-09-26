@@ -5,7 +5,7 @@ services:
         - DISPLAY
     privileged: true
     network_mode: "host"
-    image: "pinfake/android-emulator-x11:${EMULATOR_DISTRO}"
+    image: "d1alogo/android-emulator-x11:${EMULATOR_DISTRO}"
     volumes:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix"
@@ -13,7 +13,7 @@ services:
   development:
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-react-native"
+    image: "d1alogo/android-react-native:nov16"
     volumes:
         - "/dev/bus/usb:/dev/bus/usb"
         - "devdata:/root"

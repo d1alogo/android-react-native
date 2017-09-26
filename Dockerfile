@@ -20,4 +20,5 @@ RUN echo "y" | android update sdk --no-ui --force -a --filter extra-android-m2re
 RUN echo "export PATH=${PATH}" > /root/.profile
 COPY entrypoint.sh /
 RUN ln -sv /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
+RUN ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
 ENTRYPOINT ["/entrypoint.sh"]

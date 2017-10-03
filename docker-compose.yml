@@ -1,5 +1,15 @@
 version: '2'
-services:
+services:    
+  emulatorPlaystoreA8:
+    environment:
+        - DISPLAY
+    privileged: true
+    network_mode: "host"
+    image: "d1alogo/android-emulator-x11:nexusPlaystoreA8"
+    volumes:
+        - "/usr/lib:/usr/lib"
+        - "/tmp/.X11-unix:/tmp/.X11-unix"
+        - "emudata:/opt/android-sdk-linux/.android"
   emulatorA8:
     environment:
         - DISPLAY
@@ -23,7 +33,7 @@ services:
   development:
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-react-native:nov16"
+    image: "d1alogo/android-react-native:sep17"
     volumes:
         - "/dev/bus/usb:/dev/bus/usb"
         - "devdata:/root"

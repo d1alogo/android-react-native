@@ -1,11 +1,21 @@
 version: '2'
 services:
-  emulator:
+  emulatorA8:
     environment:
         - DISPLAY
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-emulator-x11:${EMULATOR_DISTRO}"
+    image: "d1alogo/android-emulator-x11:nexusA8"
+    volumes:
+        - "/usr/lib:/usr/lib"
+        - "/tmp/.X11-unix:/tmp/.X11-unix"
+        - "emudata:/opt/android-sdk-linux/.android"
+  emulatorA7:
+    environment:
+        - DISPLAY
+    privileged: true
+    network_mode: "host"
+    image: "d1alogo/android-emulator-x11:nexusA7"
     volumes:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix"

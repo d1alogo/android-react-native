@@ -10,6 +10,9 @@ services:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix"
         - "emudata:/opt/android-sdk-linux/.android"
+        - "/etc/localtime:/etc/localtime"
+        - "/etc/pulse"
+        - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
   emulatorA8:
     environment:
         - DISPLAY
@@ -20,6 +23,9 @@ services:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix"
         - "emudata:/opt/android-sdk-linux/.android"
+        - "/etc/localtime:/etc/localtime"
+        - "/etc/pulse"
+        - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
   emulatorA7:
     environment:
         - DISPLAY
@@ -30,6 +36,9 @@ services:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix"
         - "emudata:/opt/android-sdk-linux/.android"
+        - "/etc/localtime:/etc/localtime"
+        - "/etc/pulse"
+        - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
   development:
     privileged: true
     network_mode: "host"

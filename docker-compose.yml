@@ -26,6 +26,19 @@ services:
         - "/etc/localtime:/etc/localtime"
         - "/etc/pulse"
         - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
+  emulatorA8_1:
+    environment:
+        - DISPLAY
+    privileged: true
+    network_mode: "host"
+    image: "d1alogo/android-emulator-x11:nexusA8_1"
+    volumes:
+        - "/usr/lib:/usr/lib"
+        - "/tmp/.X11-unix:/tmp/.X11-unix"
+        - "emudata:/opt/android-sdk-linux/.android"
+        - "/etc/localtime:/etc/localtime"
+        - "/etc/pulse"
+        - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
   emulatorA7:
     environment:
         - DISPLAY

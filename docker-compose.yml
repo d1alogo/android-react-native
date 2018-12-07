@@ -42,7 +42,7 @@ services:
   development:
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-react-native:sep17"
+    image: "d1alogo/android-react-native:dic18"
     volumes:
         - "/dev/bus/usb:/dev/bus/usb"
         - "devdata:/root"
